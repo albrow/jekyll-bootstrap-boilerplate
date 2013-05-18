@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://blog.alexbrowne.info
-title: Alex Browne
-subtitle: 'Hacker, Freelancer, Aspiring Entrepreneur'
-author: Alex Browne
+url: http://example.com
+title: Your Site Name
+subtitle:
+author: Your Name
 simple_search: http://google.com/search
 description: 
 
