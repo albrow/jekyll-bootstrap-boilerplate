@@ -17,12 +17,15 @@ with static html and css files directly because:
 NOTE: Though these tools work great for me, they're relatively untested.
 I offer no guarantees that they will work for you. (But I hope someone might find them useful!)
 
+Requires ruby and rubygems.
+
 ## Basic Usage
 
 #### Set Up:
 - Fork or clone it.
 - Run `cp -r jekyll-bootstrap-boilerplate/ your-new-project-name/`
-- Then `cd your-new-project-name`
+- `cd your-new-project-name`
+- `bundle install`
 
 #### Adding stylesheets
 - Bootstrap is already included.
