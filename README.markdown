@@ -1,28 +1,48 @@
 ## What's This?
-This is the code that powers my blog. It's based on Jekyll and Octopress. It's designed to be blazing fast
-and cheap to maintain. You can see it at http://blog.alexbrowne.info.
 
-I've decided to open-source it so that interested people can take a gander at the code. However, I haven't
-really designed this blog with modification and extension in mind. It's *not* a full-fledged blogging framework.
-I don't expect you to fork it or use it as is (but you are free to do so if you want to). Instead, I invite you
-to look at the interesting parts, learn from it, copy/modify parts of it, and give me some feedback if you want.
+This is a boilerplate jekyll setup that includes bootstrap, and some other nifty stuff.
+It is what I typically use when developing static websites. It's better than working
+with static html and css files directly because:
 
-If you're into this sort of thing, there are tons of [other open-source Jekyll blogs](https://github.com/mojombo/jekyll/wiki/Sites) out there.
+- sass is compiled automatically
+- includes a lot of cool features from Jekyll and Octopress
+- you can use the liquid templating language to write DRYer code
+- you can write pages and templates in any combination of html and markdown
+- assets are automatically uglified and gzipped
+- deployment tools for aws or rsync are included
 
-## How it works
-* Posts are written in markdown and compiled to html. (a standard Jekyll feature)
-* Stylesheets are written in sass and compiled down to a single css file. (a standard Octopress feature)
-* Syntax highlighting and other useful plugins are provided by Octopress.
-* Images are automatically compressed on deploy using ImageMagick.
-* Html, css, and javascript are automatically minified on deploy using jitify (optional).
-* All applicable content (fonts, css, html javascript, etc) is gzipped on deploy.
-* Files are stored/hosted on Amazon S3.
-* Files are cached on and distributed through Amazon Cloudfront.
+NOTE: Though these tools work great for me, they're relatively untested.
+I offer no garuntees that they will work for you. (But I hope someone might find them useful!)
 
-## The Interesting Parts
-If you're interested in the deploy process, look at plugins/aws_deploy_tools.rb, plugins/red_dragonfly.rb and Rakefile.
+## Basic Usage
 
-If you want to see the styles, look in the /sass directory.
+#### Set Up:
+- fork or clone it
+- `cp -r jekyll-bootstrap-boilerplate/ your-new-project-name/`
+- `cd your-new-project-name`
+
+#### Adding stylesheets
+- Bootstrap is already included
+- Your stylesheets should go in the custom folder. They will be automatically imported after bootstrap (so they will override it)
+
+#### Adding pages
+- Run `bundle exec rake g new_page[:your_page_name]`
+- Jekyll will create a folder in the source directory with an index.markdown file
+- It's static, so requests to '/your_page_name' will be directed to the index file in that folder
+
+#### Serving Locally
+- Run `bundle exec rake generate` to compile your static site to the public directory
+- You can run `bundle exec rake watch` to listen for changes and recompile automatically
+- Visit the public folder in your browser
+- Or (my preferred method) use [pow](http://pow.cx/)
+
+#### Deploying to AWS S3 (and CloudFront)
+- Set up an account and a bucket on [Amazon Web Services](http://aws.amazon.com/) 
+- Add a bucket and cf_distribution_id (optional) in _config.yml
+- You will need to set two environment variables: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY,
+which you can find on the AWS website after you register.
+- Run `bundle exec rake deploy`
+- Other deploy methods are available in Rakefile (I haven't personally tested them) 
 
 ## Acknowledgements
 This blog uses all or parts of the following (sometimes with modification): 
@@ -30,7 +50,6 @@ This blog uses all or parts of the following (sometimes with modification):
 * [Jekyll by Tom Preston-Werner & Nick Quaranto](https://github.com/mojombo/jekyll) – [(License)](https://github.com/mojombo/jekyll/blob/master/LICENSE)
 * [Bootstrap by Twitter](http://twitter.github.com/bootstrap/) – [(License)](https://github.com/twitter/bootstrap/blob/master/LICENSE)
 * [bootstrap-sass by Thomas McDonald](https://github.com/thomas-mcdonald/bootstrap-sass) – [(License)](https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/LICENSE)
-* [Font Awesome by Dave Gandy](http://fortawesome.github.com/Font-Awesome) – [(License)](http://fortawesome.github.com/Font-Awesome/#license)
 
 Much thanks to everyone who contributed to the above projects, and to any other projects, frameworks,
 or snippets of code that I've incorporated.

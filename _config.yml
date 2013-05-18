@@ -56,6 +56,7 @@ acl: public-read
 cf_distribution_id:
 
 # these have been moved to shell env variables for privacy's sake.
+# You can include them here if you don't plan on pushing to a publc repository
 # access_key_id:
 # secret_access_key:
 
