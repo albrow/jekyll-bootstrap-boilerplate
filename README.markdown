@@ -1,3 +1,6 @@
+Jekyll Bootstrap Boilerplate
+============================
+
 ## What's This?
 
 This is a boilerplate jekyll setup that includes bootstrap, and some other nifty stuff.
@@ -43,6 +46,14 @@ I offer no guarantees that they will work for you. (But I hope someone might fin
 which you can find on the AWS website after you register.
 - Run `bundle exec rake deploy`
 - Other deploy methods are available in Rakefile (I haven't personally tested them).
+
+## TODO:
+
+In general:
+
+- Add some tests
+- Improve generality and customizability
+- Strip out some stuff that isn't typically used
 
 ## Acknowledgements
 This uses all or parts of the following (sometimes with modification): 
