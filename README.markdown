@@ -4,45 +4,45 @@ This is a boilerplate jekyll setup that includes bootstrap, and some other nifty
 It is what I typically use when developing static websites. It's better than working
 with static html and css files directly because:
 
-- sass is compiled automatically
-- includes a lot of cool features from Jekyll and Octopress
-- you can use the liquid templating language to write DRYer code
-- you can write pages and templates in any combination of html and markdown
-- assets are automatically uglified and gzipped
-- deployment tools for aws or rsync are included
+- Sass is compiled automatically
+- It includes a lot of cool features from Jekyll and Octopress
+- You can use the liquid templating language to write DRYer code
+- You can write pages and templates in any combination of html and markdown
+- Assets are automatically uglified and gzipped
+- Deployment tools for aws or rsync are included
 
 NOTE: Though these tools work great for me, they're relatively untested.
-I offer no garuntees that they will work for you. (But I hope someone might find them useful!)
+I offer no guarantees that they will work for you. (But I hope someone might find them useful!)
 
 ## Basic Usage
 
 #### Set Up:
-- fork or clone it
-- `cp -r jekyll-bootstrap-boilerplate/ your-new-project-name/`
-- `cd your-new-project-name`
+- Fork or clone it.
+- Run `cp -r jekyll-bootstrap-boilerplate/ your-new-project-name/`
+- Then `cd your-new-project-name`
 
 #### Adding stylesheets
-- Bootstrap is already included
-- Your stylesheets should go in the custom folder. They will be automatically imported after bootstrap (so they will override it)
+- Bootstrap is already included.
+- Your stylesheets should go in the custom folder. They will be automatically imported after bootstrap (so they will override it).
 
 #### Adding pages
 - Run `bundle exec rake g new_page[:your_page_name]`
-- Jekyll will create a folder in the source directory with an index.markdown file
-- It's static, so requests to '/your_page_name' will be directed to the index file in that folder
+- Jekyll will create a folder in the source directory with an index.markdown file.
+- It's static, so requests to '/your_page_name' will be directed to the index file in that folder.
 
 #### Serving Locally
-- Run `bundle exec rake generate` to compile your static site to the public directory
-- You can run `bundle exec rake watch` to listen for changes and recompile automatically
-- Visit the public folder in your browser
+- Run `bundle exec rake generate` to compile your static site to the public directory.
+- You can run `bundle exec rake watch` to listen for changes and recompile automatically.
+- Visit the public folder in your browser.
 - Or (my preferred method) use [pow](http://pow.cx/)
 
 #### Deploying to AWS S3 (and CloudFront)
-- Set up an account and a bucket on [Amazon Web Services](http://aws.amazon.com/) 
+- Set up an account and a bucket on [Amazon Web Services](http://aws.amazon.com/).
 - Add a bucket and cf_distribution_id (optional) in _config.yml
 - You will need to set two environment variables: AWS_ACCESS_KEY_ID and AWS_SECRET_ACCESS_KEY,
 which you can find on the AWS website after you register.
 - Run `bundle exec rake deploy`
-- Other deploy methods are available in Rakefile (I haven't personally tested them) 
+- Other deploy methods are available in Rakefile (I haven't personally tested them).
 
 ## Acknowledgements
 This uses all or parts of the following (sometimes with modification): 
