@@ -45,7 +45,7 @@ which you can find on the AWS website after you register.
 - Other deploy methods are available in Rakefile (I haven't personally tested them) 
 
 ## Acknowledgements
-This blog uses all or parts of the following (sometimes with modification): 
+This uses all or parts of the following (sometimes with modification): 
 * [Octopress by Brandon Mathis](http://octopress.org/) – [(License)](https://github.com/imathis/octopress#license)
 * [Jekyll by Tom Preston-Werner & Nick Quaranto](https://github.com/mojombo/jekyll) – [(License)](https://github.com/mojombo/jekyll/blob/master/LICENSE)
 * [Bootstrap by Twitter](http://twitter.github.com/bootstrap/) – [(License)](https://github.com/twitter/bootstrap/blob/master/LICENSE)
